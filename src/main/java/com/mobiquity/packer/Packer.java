@@ -9,7 +9,7 @@ import com.mobiquity.service.LineParserService;
 import com.mobiquity.service.PackageProblemService;
 
 /**
- * API class of the project.
+ * The main class of the API where everything is triggered from.
  * 
  * @author ben-malik
  */
@@ -42,4 +42,5 @@ public class Packer {
       throw new APIException(e.getMessage(), e);
     }
   }
+  
 }
