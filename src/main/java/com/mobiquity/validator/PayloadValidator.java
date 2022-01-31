@@ -26,9 +26,10 @@ public class PayloadValidator {
     }
 
     /**
-     * 
-     * @param line
-     * @return
+     * Checks to ensure the pattern validity of the given line 
+     * @param line The line whose pattern validity is to be checked.
+     * @return An array of strings.
+     * @throws InputFormatException in case of any particular failure.
      */
     public String[] ensureLinePattern(String line) {
 
@@ -44,8 +45,9 @@ public class PayloadValidator {
     }
 
     /**
-     * 
-     * @param targetWeight
+     * Checks to ensure the validity of the given target weight.
+     * @param targetWeight The target weight whose validity is sought.
+     * @throws InputFormatException in case of a failure.
      */
     public void ensureTargetWeight(Double targetWeight) {
         if (targetWeight > Double.parseDouble(Constants.MAXIMUM_PACKAGE_WEIGHT)) {
@@ -54,8 +56,9 @@ public class PayloadValidator {
     }
 
     /**
-     * 
-     * @param items
+     * Checks for the validity of the maximum item number of a list of items
+     * @param items The items whose validity is to be checked.
+     * @throws InputFormatException in case of a failure.
      */
     public void ensureMaximumItemNumber(List<Item> items) {
         if (items.size() > Integer.parseInt(Constants.MAXIMUM_ITEM_NUMBER)) {
@@ -64,8 +67,9 @@ public class PayloadValidator {
     }
 
     /**
-     * 
-     * @param weight
+     * Checks to ensure the validity of the item's weight
+     * @param weight The weight whose validity is sought.
+     * @throws InputFormatException in case of a failure.
      */
     public void ensureItemWeight(Double weight) {
 
@@ -75,8 +79,9 @@ public class PayloadValidator {
     }
 
     /**
-     * 
-     * @param cost
+     * Checks to ensure the validity of a cost
+     * @param cost The cost whose validity is sought.
+     * @throws InputFormatException in case of a failure.
      */
     public void ensureItemCost(Double cost) {
         if (cost > Double.parseDouble(Constants.MAXIMUM_ITEM_COST)) {
@@ -85,8 +90,9 @@ public class PayloadValidator {
     }
 
     /**
-     * 
-     * @param items
+     * Checks to ensure there are no duplicate items in a given list of items
+     * @param items The list of items to be checked.
+     * @throws InputFormatException in case of a failure.
      */
     public void avoidDuplicateItems(List<Item> items) {
         Set<Integer> duplicateItems = new HashSet<>();

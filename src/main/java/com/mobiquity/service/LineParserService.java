@@ -26,7 +26,7 @@ public class LineParserService {
      * @return an object of {@linkplain Payload} of the given string of line(pacakge).
      */
     public Payload parse(String line) {
-        var problemParts = payloadValidator.ensureLinePattern(line);
+        String[] problemParts = payloadValidator.ensureLinePattern(line);
         var targetWeight = parseTargetWeight(problemParts[0]);
         var items = parseItems(problemParts[1]);
         

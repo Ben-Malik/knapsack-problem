@@ -27,14 +27,12 @@ public class FileReaderServiceTest {
         fileReaderService = new FileReaderService();
     }
 
-    //Positive Tests
     @Test
     void ensureThatAPIExceptionIsNotThrownWhenThenGivenDirectoryIsValid() {
         var resultingLines = fileReaderService.readLines(TestFileUtilities.validFilePath.toString()).collect(Collectors.toList());
         Assertions.assertEquals(4, resultingLines.size());
     }
 
-    //Negative Tests
     @Test
     void ensureThatAPIExceptionIsThrownWhenTheDirectoryIsInvalid() {
         var exception = Assertions.assertThrows(FileReadException.class, () ->

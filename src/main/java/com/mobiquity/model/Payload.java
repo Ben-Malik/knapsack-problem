@@ -3,7 +3,7 @@ package com.mobiquity.model;
 import java.util.List;
 
 /**
- * An encapsulation of a package.
+ * An encapsulation of a the package.
  * 
  * @author ben-malik
  */

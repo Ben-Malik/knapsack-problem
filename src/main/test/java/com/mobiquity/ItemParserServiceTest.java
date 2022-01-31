@@ -37,7 +37,6 @@ public class ItemParserServiceTest {
         validItem = validFileLines.get(0).split(" : ")[1].split(" ")[0];
     }
 
-    //Positive Tests
     @Test
     void ensureThatAPIExceptionIsNotThrownWhenTheGivenItemIsValid() {
         var parsedItem = itemParserService.parse(validItem);
@@ -46,7 +45,6 @@ public class ItemParserServiceTest {
         Assertions.assertEquals(45, parsedItem.getCost());
     }
 
-    //Negative Tests
     @Test
     void ensureThatAPIExceptionIsThrownWhenThePayloadValidatorThrowsException() {
         doThrow(new InputFormatException(TEST_EXCEPTION)).when(testPayloadValidator).ensureItemWeight(Mockito.anyDouble());
