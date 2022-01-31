@@ -1,0 +1,33 @@
+plugins {
+  id 'java'
+  id 'maven-publish'
+}
+compileJava.options.encoding = 'UTF-8'
+
+group 'com.mobiquity'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_11
+
+repositories {
+  mavenCentral()
+}
+
+publishing {
+  publications {
+    maven(MavenPublication) {
+      artifactId = 'implementation'
+      from components.java
+    }
+  }
+}
+
+dependencies {
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+	testImplementation 'org.mockito:mockito-core:3.11.0'
+	testImplementation 'org.mockito:mockito-junit-jupiter:3.11.0'
+}
+
+test {
+	useJUnitPlatform()
+}
