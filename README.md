@@ -57,9 +57,9 @@ For each test case, this API provides a new row in the output string (items’ i
 >***Packer***
    ```
    reader.readLines(filePath)                                           //returns line stream
-                    .map(lineParser::parseLine)                         //returns problem stream
-                    .map(problemSolver::solve)                          //returns solution stream
-                    .map(Solution::toString)                            //returns string value of every solution
+                    .map(lineParserService::parse)                      //returns problem stream
+                    .map(problemService::solve)                         //returns solution stream
+                    .map(List<Integer>::toString)                       //returns string value of every solution
                     .collect(Collectors.joining("\n"));                 //prints the solution line by line 
    ```
 
