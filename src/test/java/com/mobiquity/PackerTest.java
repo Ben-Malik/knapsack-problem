@@ -2,20 +2,18 @@ package com.mobiquity;
 
 
 import com.mobiquity.exception.APIException;
-import com.mobiquity.TestFileUtilities;
+import com.mobiquity.packer.Packer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import com.mobiquity.packer.Packer;
-
 /**
  * A test class for the {@linkplain Packer} class method's scenrios.
- * 
+ *
  * @author ben-malik
  */
 public class PackerTest {
 
-    @Test 
+    @Test
     public void testPackWhenGivenInputIsValid() throws APIException {
         String allSolutions = Packer.pack(TestFileUtilities.validFilePath.toString());
         String[] solutions = allSolutions.split("\n");
@@ -32,7 +30,7 @@ public class PackerTest {
     public void ensureThatAPIExceptionIsThrownWhenTheGivenFilePathIsInvalid() {
         var exception = Assertions.assertThrows(APIException.class, () -> Packer.pack(TestFileUtilities.nonExistingFilePathString));
         Assertions.assertEquals("An exception occurred while reading the file.", exception.getMessage());
-   
+
     }
 
     @Test
@@ -58,6 +56,7 @@ public class PackerTest {
         var exception = Assertions.assertThrows(APIException.class, () -> Packer.pack(TestFileUtilities.invalidItemWeight));
         Assertions.assertEquals("The maximum item weight limit is 100", exception.getMessage());
     }
+
     @Test
     void ensureAPIExceptionIsThrownWhenTheMaximumCostIsExceeded() {
         var exception = Assertions.assertThrows(APIException.class, () -> Packer.pack(TestFileUtilities.invalidItemPrice));

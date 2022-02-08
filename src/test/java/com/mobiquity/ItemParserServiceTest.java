@@ -1,11 +1,8 @@
 package com.mobiquity;
 
 import com.mobiquity.exception.InputFormatException;
-
-import com.mobiquity.TestFileUtilities;
 import com.mobiquity.service.ItemParserService;
 import com.mobiquity.validator.PayloadValidator;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,9 +12,10 @@ import org.mockito.Mockito;
 import java.util.List;
 
 import static org.mockito.Mockito.doThrow;
+
 /**
  * A test class for the {@linkplain ItemParserService} class.
- * 
+ *
  * @author ben-malik
  */
 public class ItemParserServiceTest {
@@ -61,5 +59,5 @@ public class ItemParserServiceTest {
         var exception = Assertions.assertThrows(InputFormatException.class, () -> itemParserService.parse(validItem));
         Assertions.assertEquals(TEST_EXCEPTION, exception.getMessage());
     }
-    
+
 }

@@ -1,26 +1,21 @@
 package com.mobiquity;
 
+import com.mobiquity.model.Item;
+import com.mobiquity.model.Payload;
 import com.mobiquity.service.PackageProblemService;
-import com.mobiquity.validator.PayloadValidator;
-
-import com.mobiquity.model.*;
-
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
 
 /**
  * A test class for the {@linkplain PackageProblemService} class.
- * 
+ *
  * @author ben-malik
  */
 public class PackageProblemServiceTest {
-    
+
     private PackageProblemService packageProblemService;
 
     @BeforeEach
@@ -60,5 +55,5 @@ public class PackageProblemServiceTest {
         var solution = packageProblemService.solve(payload);
         Assertions.assertEquals("4,5", solution.toStringAndSort());
     }
-   
+
 }

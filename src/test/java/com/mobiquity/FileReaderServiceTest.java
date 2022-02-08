@@ -1,22 +1,21 @@
 package com.mobiquity;
 
 import com.mobiquity.exception.FileReaderException;
+import com.mobiquity.service.FileReaderService;
+import com.mobiquity.service.PackageProblemService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.stream.Collectors;
 
-import com.mobiquity.service.FileReaderService;
-import com.mobiquity.service.PackageProblemService;
-
 /**
  * A test class for the {@linkplain FileReaderService} class.
- * 
+ *
  * @author ben-malik
  */
 public class FileReaderServiceTest {
-    
+
     private PackageProblemService packageProblemService;
     private FileReaderService fileReaderService;
 

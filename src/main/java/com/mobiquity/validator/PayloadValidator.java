@@ -1,17 +1,17 @@
 package com.mobiquity.validator;
 
+import com.mobiquity.constant.Constants;
+import com.mobiquity.exception.InputFormatException;
+import com.mobiquity.model.Item;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.mobiquity.constant.Constants;
-import com.mobiquity.exception.InputFormatException;
-import com.mobiquity.model.Item;
-
 /**
  * A valicator class to ensure all the constraints on the Payload or Package to be sent.
- * 
+ *
  * @author ben-malik
  */
 public class PayloadValidator {
@@ -26,7 +26,8 @@ public class PayloadValidator {
     }
 
     /**
-     * Checks to ensure the pattern validity of the given line 
+     * Checks to ensure the pattern validity of the given line
+     *
      * @param line The line whose pattern validity is to be checked.
      * @return An array of strings.
      * @throws InputFormatException in case of any particular failure.
@@ -46,6 +47,7 @@ public class PayloadValidator {
 
     /**
      * Checks to ensure the validity of the given target weight.
+     *
      * @param targetWeight The target weight whose validity is sought.
      * @throws InputFormatException in case of a failure.
      */
@@ -57,6 +59,7 @@ public class PayloadValidator {
 
     /**
      * Checks for the validity of the maximum item number of a list of items
+     *
      * @param items The items whose validity is to be checked.
      * @throws InputFormatException in case of a failure.
      */
@@ -68,6 +71,7 @@ public class PayloadValidator {
 
     /**
      * Checks to ensure the validity of the item's weight
+     *
      * @param weight The weight whose validity is sought.
      * @throws InputFormatException in case of a failure.
      */
@@ -80,6 +84,7 @@ public class PayloadValidator {
 
     /**
      * Checks to ensure the validity of a cost
+     *
      * @param cost The cost whose validity is sought.
      * @throws InputFormatException in case of a failure.
      */
@@ -91,6 +96,7 @@ public class PayloadValidator {
 
     /**
      * Checks to ensure there are no duplicate items in a given list of items
+     *
      * @param items The list of items to be checked.
      * @throws InputFormatException in case of a failure.
      */

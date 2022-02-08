@@ -10,11 +10,11 @@ import java.util.stream.Collectors;
 
 /**
  * Utilities to be used in the test classes.
- * 
+ *
  * @author ben-malik
  */
 public class TestFileUtilities {
-    
+
     public static Path validFilePath;
     public static Path invalidLinePath;
     public static String invalidTargetWeight;
@@ -48,6 +48,7 @@ public class TestFileUtilities {
 
     /**
      * A helper method to grab the resouce path of a file given its file name.
+     *
      * @param fileName The name of the file whose resource path is sought.
      * @return The Path of the file name.
      * @throws URISyntaxException in a failure accurrence.
@@ -58,6 +59,7 @@ public class TestFileUtilities {
 
     /**
      * A helper method to grab the string version path of the given file name.
+     *
      * @param fileName the name of the file whose resource path is sought.
      * @return The String of the resource path of the file name .
      * @throws URISyntaxException when any particular failure occurs.
@@ -65,5 +67,5 @@ public class TestFileUtilities {
     private static String getResourcePathString(String fileName) throws URISyntaxException {
         return getResourcePath(fileName).toString();
     }
-    
+
 }

@@ -1,16 +1,16 @@
 package com.mobiquity.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.mobiquity.constant.Constants;
 import com.mobiquity.model.Item;
 import com.mobiquity.model.Payload;
 import com.mobiquity.model.Solution;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The service class to solve the package problem.
- * 
+ *
  * @author ben-malik
  */
 public class PackageProblemService {
@@ -20,7 +20,7 @@ public class PackageProblemService {
 
     /**
      * Conducts all computations and finds the most optimum solution to the package problem.
-     * 
+     * <p>
      * Multiplies weight and price values with 100 and puts into separate arrays
      * This is done because the values can be Double and algorithm is designed to
      * work with Integer problems
@@ -29,7 +29,7 @@ public class PackageProblemService {
      *
      * @param payload The payload or problem to be solved.
      * @returns a list of integers as the solution to the problem containing the
-     *          list of the selected Items
+     * list of the selected Items
      */
     public Solution solve(Payload payload) {
 
@@ -48,6 +48,7 @@ public class PackageProblemService {
 
     /**
      * A helper method to compute the optimum package given two arrays of weights and costs
+     *
      * @param weights
      * @param costs
      * @return
@@ -73,14 +74,15 @@ public class PackageProblemService {
 
     /**
      * Creates a solution to the problem given the resulting matrix, weights and costs.
+     *
      * @param resultingMatrix acquired from the weights and costs.
-     * @param weights 
+     * @param weights
      * @param costs
      * @param indexes
      * @return a list of integers as the solution to the package problem.
      */
     private Solution createSolution(int[][] resultingMatrix, Integer[] weights, Integer[] costs,
-            Integer[] indexes) {
+                                    Integer[] indexes) {
 
         List<Integer> selectedItems = new ArrayList<>();
         int bestPrice = resultingMatrix[complexity][capacity];

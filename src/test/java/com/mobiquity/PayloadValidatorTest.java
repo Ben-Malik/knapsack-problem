@@ -1,10 +1,8 @@
 package com.mobiquity;
 
-import com.mobiquity.validator.PayloadValidator;
 import com.mobiquity.exception.InputFormatException;
-
 import com.mobiquity.model.Item;
-
+import com.mobiquity.validator.PayloadValidator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -12,13 +10,13 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 
+/**
  * A test class for the {@linkplain PayloadValidator} class.
- * 
+ *
  * @author ben-malik
  */
 public class PayloadValidatorTest {
-    
+
     private static PayloadValidator payloadValidator;
 
     @BeforeAll
@@ -29,10 +27,10 @@ public class PayloadValidatorTest {
     @Test
     public void ensureThatEnsureLinePatternDoesNotThrowAPIExceptionWhenTheGivenLineIsValid() {
         Assertions.assertDoesNotThrow(() -> payloadValidator
-            .ensureLinePattern(TestFileUtilities.validFileLines.get(0)));
+                .ensureLinePattern(TestFileUtilities.validFileLines.get(0)));
     }
 
-    @Test 
+    @Test
     public void ensureThatAPIExceptionIsThrownWhenTheLinePatternIsNotValid() {
         var invalidFileLine = TestFileUtilities.invalidFileLines.get(0);
         var exception = Assertions.assertThrows(InputFormatException.class, () ->
@@ -57,12 +55,12 @@ public class PayloadValidatorTest {
         List<Item> itemList = new ArrayList<>();
         itemList.add(new Item(1, 2d, 3d));
         itemList.add(new Item(2, 2d, 3d));
-        Assertions.assertDoesNotThrow(() -> payloadValidator.avoidDuplicateItems(itemList));    
+        Assertions.assertDoesNotThrow(() -> payloadValidator.avoidDuplicateItems(itemList));
     }
 
-    @Test 
+    @Test
     public void ensureThatAPIExceptionIsNotThrownWhenTheGivenItemAndWeightAreValid() {
-        Assertions.assertDoesNotThrow(() -> payloadValidator.ensureItemWeight(100d));  
+        Assertions.assertDoesNotThrow(() -> payloadValidator.ensureItemWeight(100d));
     }
 
     @Test
@@ -93,17 +91,17 @@ public class PayloadValidatorTest {
         var exception = Assertions.assertThrows(InputFormatException.class, () -> payloadValidator.avoidDuplicateItems(itemList));
         Assertions.assertEquals("The same item index occurs more than once in a line.", exception.getMessage());
     }
-    
+
     @Test
     public void ensureThatAPIExceptionIsThrownWhenTheGivenWeightIsInvalid() {
         var exception = Assertions.assertThrows(InputFormatException.class, () -> payloadValidator.ensureItemWeight(101d));
         Assertions.assertEquals("The maximum item weight limit is 100", exception.getMessage());
-    }                                                                        
+    }
 
     @Test
     public void ensureThatAPIExceptionIsThrownWhenTheGivenItemCostIsInvalid() {
         var exception = Assertions.assertThrows(InputFormatException.class, () -> payloadValidator.ensureItemCost(101d));
-        Assertions.assertEquals("The maximum item cost limit is 100", exception.getMessage());    
+        Assertions.assertEquals("The maximum item cost limit is 100", exception.getMessage());
     }
-  
+
 }

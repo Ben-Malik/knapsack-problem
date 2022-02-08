@@ -22,6 +22,7 @@ public class Solution {
 
     /**
      * sorts the selected items and gets them as a string.
+     *
      * @return a string version of the solution.
      */
     public String toStringAndSort() {

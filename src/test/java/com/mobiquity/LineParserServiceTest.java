@@ -3,7 +3,6 @@ package com.mobiquity;
 import com.mobiquity.exception.InputFormatException;
 import com.mobiquity.service.LineParserService;
 import com.mobiquity.validator.PayloadValidator;
-import com.mobiquity.TestFileUtilities;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,11 +16,11 @@ import static org.mockito.Mockito.doThrow;
 
 /**
  * A test class for the {@linkplain LineParserService} class.
- * 
+ *
  * @author ben-malik
  */
 public class LineParserServiceTest {
-    
+
     private static final String TEST_EXCEPTION = "test";
     private static final String validFileLine = TestFileUtilities.validFileLines.get(0);
     private static PayloadValidator payloadValidator;
@@ -76,5 +75,5 @@ public class LineParserServiceTest {
         var exception = Assertions.assertThrows(NullPointerException.class, () -> lineParserService.parse(validFileLine));
         Assertions.assertEquals(null, exception.getMessage());
     }
-    
+
 }
