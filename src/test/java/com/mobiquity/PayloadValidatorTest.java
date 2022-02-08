@@ -1,6 +1,16 @@
 package com.mobiquity;
 
 import com.mobiquity.validator.PayloadValidator;
+import com.mobiquity.exception.InputFormatException;
+
+import com.mobiquity.model.Item;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /** 
  * A test class for the {@linkplain PayloadValidator} class.
@@ -25,9 +35,9 @@ public class PayloadValidatorTest {
     @Test 
     public void ensureThatAPIExceptionIsThrownWhenTheLinePatternIsNotValid() {
         var invalidFileLine = TestFileUtilities.invalidFileLines.get(0);
-        var exception = Assertions.assertThrows(TestFileUtilities.class, () ->
+        var exception = Assertions.assertThrows(InputFormatException.class, () ->
                 payloadValidator.ensureLinePattern(invalidFileLine));
-        Assertions.assertEquals("The given line format is not correct.", exception.getMessage());
+        Assertions.assertEquals("The given line format is not accurrate.", exception.getMessage());
     }
 
     @Test
@@ -62,7 +72,7 @@ public class PayloadValidatorTest {
 
     @Test
     public void ensureThatAPIExceptionIsThrownWhenTheGivenTargetWeightIsInvalid() {
-        var exception = Assertions.assertThrows(TestFileUtilities.class, () -> payloadValidator.ensureTargetWeight(150d));
+        var exception = Assertions.assertThrows(InputFormatException.class, () -> payloadValidator.ensureTargetWeight(150d));
         Assertions.assertEquals("The maximum total weight limit is 100", exception.getMessage());
     }
 
@@ -71,7 +81,7 @@ public class PayloadValidatorTest {
         List<Item> itemList = new ArrayList<>();
         for (int i = 0; i < 16; i++)
             itemList.add(new Item(1, 2d, 3d));
-        var exception = Assertions.assertThrows(TestFileUtilities.class, () -> payloadValidator.ensureMaximumItemNumber(itemList));
+        var exception = Assertions.assertThrows(InputFormatException.class, () -> payloadValidator.ensureMaximumItemNumber(itemList));
         Assertions.assertEquals("The maximum number of items in a line can be 15", exception.getMessage());
     }
 
@@ -80,19 +90,19 @@ public class PayloadValidatorTest {
         List<Item> itemList = new ArrayList<>();
         for (int i = 0; i < 2; i++)
             itemList.add(new Item(1, 2d, 3d));
-        var exception = Assertions.assertThrows(TestFileUtilities.class, () -> payloadValidator.avoidDuplicateItems(itemList));
+        var exception = Assertions.assertThrows(InputFormatException.class, () -> payloadValidator.avoidDuplicateItems(itemList));
         Assertions.assertEquals("The same item index occurs more than once in a line.", exception.getMessage());
     }
     
     @Test
     public void ensureThatAPIExceptionIsThrownWhenTheGivenWeightIsInvalid() {
-        var exception = Assertions.assertThrows(TestFileUtilities.class, () -> payloadValidator.ensureItemWeight(101d));
+        var exception = Assertions.assertThrows(InputFormatException.class, () -> payloadValidator.ensureItemWeight(101d));
         Assertions.assertEquals("The maximum item weight limit is 100", exception.getMessage());
     }                                                                        
 
     @Test
     public void ensureThatAPIExceptionIsThrownWhenTheGivenItemCostIsInvalid() {
-        var exception = Assertions.assertThrows(TestFileUtilities.class, () -> payloadValidator.ensureItemCost(101d));
+        var exception = Assertions.assertThrows(InputFormatException.class, () -> payloadValidator.ensureItemCost(101d));
         Assertions.assertEquals("The maximum item cost limit is 100", exception.getMessage());    
     }
   

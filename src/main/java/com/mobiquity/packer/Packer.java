@@ -1,9 +1,9 @@
 package com.mobiquity.packer;
 
-import java.util.List;
 import java.util.stream.Collectors;
 
 import com.mobiquity.exception.APIException;
+import com.mobiquity.model.Solution;
 import com.mobiquity.service.FileReaderService;
 import com.mobiquity.service.LineParserService;
 import com.mobiquity.service.PackageProblemService;
@@ -36,7 +36,7 @@ public class Packer {
       return reader.readLines(filePath)
           .map(lineParserService::parse)
           .map(problemService::solve)
-          .map(List<Integer>::toString)
+          .map(Solution::toStringAndSort)
           .collect(Collectors.joining("\n"));
     } catch (Exception e) {
       throw new APIException(e.getMessage(), e);

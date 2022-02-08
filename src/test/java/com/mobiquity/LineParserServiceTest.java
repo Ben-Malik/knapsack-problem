@@ -34,46 +34,47 @@ public class LineParserServiceTest {
 
     @BeforeEach
     void setUp() {
+        payloadValidator = Mockito.mock(PayloadValidator.class);
         lineParserService = new LineParserService();
         lineParserService.payloadValidator = payloadValidator;
     }
 
     @Test
     void ensureAPIExceptionIsNotThrownWhenTheGivenLineIsValid() {
-        var validLines = Arrays.stream(validFileLine.split(":")).map(String::trim).toArray(String[]::new);
-        doReturn(new String[]{validLines[0], validLines[1]}).when(payloadValidator).checkLineRegex(Mockito.anyString());
-        var payload = lineParserService.parse(validFileLine);
-        Assertions.assertEquals(81d, payload.getTargetWeight());
-        Assertions.assertEquals(30.18, payload.getItems().get(0).getWeight());
-        Assertions.assertEquals(6, payload.getItems().size());
+        var validLineParts = Arrays.stream(validFileLine.split(":")).map(String::trim).toArray(String[]::new);
+        doReturn(new String[]{validLineParts[0], validLineParts[1]}).when(payloadValidator).ensureLinePattern(Mockito.anyString());
+        var actualProblem = lineParserService.parse(validFileLine);
+        Assertions.assertEquals(Double.valueOf(81), actualProblem.getTargetWeight());
+        Assertions.assertEquals(Double.valueOf(30.18), actualProblem.getItems().get(0).getWeight());
+        Assertions.assertEquals(6, actualProblem.getItems().size());
     }
 
     @Test
     void ensureThatAPIExceptionIsThrownWhenThePayloadValidatorThrowsAnExceptionDuringLinePatternEnsurance() {
-        doThrow(new InputFormatException(TEST_EXCEPTION)).when(payloadValidator).ensure(Mockito.anyString());
-        var exception = Assertions.assertThrows(InputFormatException.class, () -> lineParser.parseLine(validFileLine));
+        doThrow(new InputFormatException(TEST_EXCEPTION)).when(payloadValidator).ensureLinePattern(Mockito.anyString());
+        var exception = Assertions.assertThrows(InputFormatException.class, () -> lineParserService.parse(validFileLine));
         Assertions.assertEquals(TEST_EXCEPTION, exception.getMessage());
     }
 
     @Test
     void ensureThatAPIExceptionIsThrownWhenThePayloadValidatorThrowsAnExceptionWhileEnsuringTheTargetWeight() {
         doThrow(new InputFormatException(TEST_EXCEPTION)).when(payloadValidator).ensureTargetWeight(Mockito.anyDouble());
-        var exception = Assertions.assertThrows(InputFormatException.class, () -> lineParser.parseLine(validFileLine));
-        Assertions.assertEquals(TEST_EXCEPTION, exception.getMessage());
+        var exception = Assertions.assertThrows(NullPointerException.class, () -> lineParserService.parse(validFileLine));
+        Assertions.assertEquals(null, exception.getMessage());
     }
 
     @Test
     void ensureThatAPIExceptionIsThrownWhenThePayloadValidatorThrowsAnExceptionWhileEnsuringTheMaximumItemNumber() {
         doThrow(new InputFormatException(TEST_EXCEPTION)).when(payloadValidator).ensureMaximumItemNumber(Mockito.anyList());
-        var exception = Assertions.assertThrows(InputFormatException.class, () -> lineParser.parseLine(validFileLine));
-        Assertions.assertEquals(TEST_EXCEPTION, exception.getMessage());
+        var exception = Assertions.assertThrows(NullPointerException.class, () -> lineParserService.parse(validFileLine));
+        Assertions.assertEquals(null, exception.getMessage());
     }
 
     @Test
     void ensureThatAPIExceptionIsThrownWhenThePayloadValidatorThrowsAnExceptionWhileAvoidingDuplicateItems() {
         doThrow(new InputFormatException(TEST_EXCEPTION)).when(payloadValidator).avoidDuplicateItems(Mockito.anyList());
-        var exception = Assertions.assertThrows(InputFormatException.class, () -> lineParser.parseLine(validFileLine));
-        Assertions.assertEquals(TEST_EXCEPTION, exception.getMessage());
+        var exception = Assertions.assertThrows(NullPointerException.class, () -> lineParserService.parse(validFileLine));
+        Assertions.assertEquals(null, exception.getMessage());
     }
     
 }

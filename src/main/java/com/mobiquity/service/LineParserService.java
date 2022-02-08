@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.mobiquity.constant.Constants;
+import com.mobiquity.exception.InputFormatException;
 import com.mobiquity.model.Item;
 import com.mobiquity.model.Payload;
 import com.mobiquity.validator.PayloadValidator;
@@ -22,10 +23,10 @@ public class LineParserService {
     /**
      * Parses and validate a given line of the file into a {@linkplain Payload}
      * @param line The line to parsed and validated.
-     * @throws a {@linkplain InputFormatException}
+     * @throws an {@linkplain InputFormatException}
      * @return an object of {@linkplain Payload} of the given string of line(pacakge).
      */
-    public Payload parse(String line) {
+    public Payload parse(String line) throws InputFormatException {
         String[] problemParts = payloadValidator.ensureLinePattern(line);
         var targetWeight = parseTargetWeight(problemParts[0]);
         var items = parseItems(problemParts[1]);

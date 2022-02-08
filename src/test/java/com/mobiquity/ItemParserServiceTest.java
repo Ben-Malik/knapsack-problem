@@ -1,7 +1,10 @@
 package com.mobiquity;
 
+import com.mobiquity.exception.InputFormatException;
+
 import com.mobiquity.TestFileUtilities;
 import com.mobiquity.service.ItemParserService;
+import com.mobiquity.validator.PayloadValidator;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -20,8 +23,8 @@ import static org.mockito.Mockito.doThrow;
 public class ItemParserServiceTest {
 
     private static final String TEST_EXCEPTION = "test";
-    private static final List<String> validFileLines = InputFileInformation.validFileLines;
-    private static ProblemValidator testPayloadValidator;
+    private static final List<String> validFileLines = TestFileUtilities.validFileLines;
+    private static PayloadValidator testPayloadValidator;
     private ItemParserService itemParserService;
     private String validItem;
 
@@ -40,9 +43,9 @@ public class ItemParserServiceTest {
     @Test
     void ensureThatAPIExceptionIsNotThrownWhenTheGivenItemIsValid() {
         var parsedItem = itemParserService.parse(validItem);
-        Assertions.assertEquals(1, parsedItem.getIndex());
-        Assertions.assertEquals(53.38, parsedItem.getWeight());
-        Assertions.assertEquals(45, parsedItem.getCost());
+        Assertions.assertEquals(Integer.valueOf(1), parsedItem.getIndex());
+        Assertions.assertEquals(Double.valueOf(53.38), parsedItem.getWeight());
+        Assertions.assertEquals(Double.valueOf(45), parsedItem.getCost());
     }
 
     @Test

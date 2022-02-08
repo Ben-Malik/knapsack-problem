@@ -1,8 +1,6 @@
-package com.mobiquity.reader;
+package com.mobiquity;
 
-import com.mobiquity.exception.FileReadException;
-import com.mobiquity.mock.InputFileInformation;
-import com.mobiquity.reader.Reader;
+import com.mobiquity.exception.FileReaderException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,8 +33,8 @@ public class FileReaderServiceTest {
 
     @Test
     void ensureThatAPIExceptionIsThrownWhenTheDirectoryIsInvalid() {
-        var exception = Assertions.assertThrows(FileReadException.class, () ->
+        var exception = Assertions.assertThrows(FileReaderException.class, () ->
                 fileReaderService.readLines(TestFileUtilities.nonExistingFilePathString));
-        Assertions.assertEquals("An exception occurred while reading file.", exception.getMessage());
+        Assertions.assertEquals("An exception occurred while reading the file.", exception.getMessage());
     }
 }

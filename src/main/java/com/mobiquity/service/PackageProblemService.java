@@ -6,6 +6,7 @@ import java.util.List;
 import com.mobiquity.constant.Constants;
 import com.mobiquity.model.Item;
 import com.mobiquity.model.Payload;
+import com.mobiquity.model.Solution;
 
 /**
  * The service class to solve the package problem.
@@ -30,7 +31,7 @@ public class PackageProblemService {
      * @returns a list of integers as the solution to the problem containing the
      *          list of the selected Items
      */
-    public List<Integer> solve(Payload payload) {
+    public Solution solve(Payload payload) {
 
         var weights = payload.getItems().stream().map(item -> (int) (item.getWeight() * Constants.DECIMAL_FACTOR))
                 .toArray(Integer[]::new);
@@ -78,7 +79,7 @@ public class PackageProblemService {
      * @param indexes
      * @return a list of integers as the solution to the package problem.
      */
-    private List<Integer> createSolution(int[][] resultingMatrix, Integer[] weights, Integer[] costs,
+    private Solution createSolution(int[][] resultingMatrix, Integer[] weights, Integer[] costs,
             Integer[] indexes) {
 
         List<Integer> selectedItems = new ArrayList<>();
@@ -91,7 +92,7 @@ public class PackageProblemService {
                 capacity = capacity - weights[i];
             }
         }
-        return selectedItems;
+        return new Solution(selectedItems);
     }
 
 }

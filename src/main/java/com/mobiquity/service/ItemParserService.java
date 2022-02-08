@@ -1,6 +1,7 @@
 package com.mobiquity.service;
 
 import com.mobiquity.constant.Constants;
+import com.mobiquity.exception.InputFormatException;
 import com.mobiquity.model.Item;
 import com.mobiquity.validator.PayloadValidator;
 
@@ -19,7 +20,7 @@ public class ItemParserService {
      * @throws {@linkplain InputFormatException} in case any of the validations does not pass.
      * @return The Object version of the given string.
      */
-    public Item parse(String itemValue) {
+    public Item parse(String itemValue) throws InputFormatException {
         var item = itemValue.replaceAll(Constants.REMOVED_PARTS_REGEX, Constants.REPLACEMENT_REGEX).split(Constants.PROPERTIES_SEPARATOR);
         
         var index = parseIndex(item[0]);

@@ -23,9 +23,11 @@ publishing {
 }
 
 dependencies {
-  testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.2.0'
-	testImplementation 'org.mockito:mockito-core:3.11.0'
-	testImplementation 'org.mockito:mockito-junit-jupiter:3.11.0'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.2.0'
+    testImplementation 'org.mockito:mockito-core:3.11.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.11.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+
 }
 
 test {
