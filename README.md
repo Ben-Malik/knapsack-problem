@@ -1,4 +1,4 @@
-# Mobiquity Package-problem
+# The Package-problem
 
 **Problem Definition:**
 
