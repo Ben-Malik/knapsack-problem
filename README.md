@@ -67,7 +67,7 @@ As a solution to the knapsack problem, dynamic programming approach is implement
    reader.readLines(filePath)                                           //returns line stream
                     .map(lineParserService::parse)                      //returns problem stream
                     .map(problemService::solve)                         //returns solution stream
-                    .map(List<Integer>::toString)                       //returns string value of every solution
+                    .map(Solution::toStringAndSort)                       //returns string value of every solution
                     .collect(Collectors.joining("\n"));                 //prints the solution line by line 
    ```
 
