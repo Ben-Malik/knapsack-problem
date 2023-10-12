@@ -1,9 +1,9 @@
-package com.mobiquity.service;
+package com.temizcode.service;
 
-import com.mobiquity.constant.Constants;
-import com.mobiquity.model.Item;
-import com.mobiquity.model.Payload;
-import com.mobiquity.model.Solution;
+import com.temizcode.constant.Constants;
+import com.temizcode.model.Item;
+import com.temizcode.model.Payload;
+import com.temizcode.model.Solution;
 
 import java.util.ArrayList;
 import java.util.List;

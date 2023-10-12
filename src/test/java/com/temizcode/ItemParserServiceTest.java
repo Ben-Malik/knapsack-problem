@@ -1,8 +1,8 @@
-package com.mobiquity;
+package com.temizcode;
 
-import com.mobiquity.exception.InputFormatException;
-import com.mobiquity.service.ItemParserService;
-import com.mobiquity.validator.PayloadValidator;
+import com.temizcode.exception.InputFormatException;
+import com.temizcode.service.ItemParserService;
+import com.temizcode.validator.PayloadValidator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;

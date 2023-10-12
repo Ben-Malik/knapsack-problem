@@ -1,9 +1,9 @@
-package com.mobiquity.service;
+package com.temizcode.service;
 
-import com.mobiquity.constant.Constants;
-import com.mobiquity.exception.InputFormatException;
-import com.mobiquity.model.Item;
-import com.mobiquity.validator.PayloadValidator;
+import com.temizcode.constant.Constants;
+import com.temizcode.exception.InputFormatException;
+import com.temizcode.model.Item;
+import com.temizcode.validator.PayloadValidator;
 
 /**
  * A class for dealing with the item checks and parsing.

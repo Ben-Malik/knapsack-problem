@@ -1,8 +1,8 @@
-package com.mobiquity;
+package com.temizcode;
 
-import com.mobiquity.exception.FileReaderException;
-import com.mobiquity.service.FileReaderService;
-import com.mobiquity.service.PackageProblemService;
+import com.temizcode.exception.FileReaderException;
+import com.temizcode.service.FileReaderService;
+import com.temizcode.service.PackageProblemService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

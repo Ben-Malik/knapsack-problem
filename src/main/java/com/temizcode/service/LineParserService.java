@@ -1,10 +1,10 @@
-package com.mobiquity.service;
+package com.temizcode.service;
 
-import com.mobiquity.constant.Constants;
-import com.mobiquity.exception.InputFormatException;
-import com.mobiquity.model.Item;
-import com.mobiquity.model.Payload;
-import com.mobiquity.validator.PayloadValidator;
+import com.temizcode.constant.Constants;
+import com.temizcode.exception.InputFormatException;
+import com.temizcode.model.Item;
+import com.temizcode.model.Payload;
+import com.temizcode.validator.PayloadValidator;
 
 import java.util.Arrays;
 import java.util.Comparator;

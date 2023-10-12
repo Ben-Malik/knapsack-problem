@@ -1,4 +1,4 @@
-package com.mobiquity.exception;
+package com.temizcode.exception;
 
 /**
  * An exception thrown when a given input's format is invalid.

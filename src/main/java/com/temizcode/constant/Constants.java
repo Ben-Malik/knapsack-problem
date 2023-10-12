@@ -1,4 +1,4 @@
-package com.mobiquity.constant;
+package com.temizcode.constant;
 
 import java.util.regex.Pattern;
 

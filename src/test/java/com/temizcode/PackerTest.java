@@ -1,8 +1,8 @@
-package com.mobiquity;
+package com.temizcode;
 
 
-import com.mobiquity.exception.APIException;
-import com.mobiquity.packer.Packer;
+import com.temizcode.exception.APIException;
+import com.temizcode.packer.Packer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

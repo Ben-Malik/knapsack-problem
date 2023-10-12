@@ -1,8 +1,8 @@
-package com.mobiquity;
+package com.temizcode;
 
-import com.mobiquity.model.Item;
-import com.mobiquity.model.Payload;
-import com.mobiquity.service.PackageProblemService;
+import com.temizcode.model.Item;
+import com.temizcode.model.Payload;
+import com.temizcode.service.PackageProblemService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,7 +1,7 @@
-package com.mobiquity.service;
+package com.temizcode.service;
 
-import com.mobiquity.constant.Constants;
-import com.mobiquity.exception.FileReaderException;
+import com.temizcode.constant.Constants;
+import com.temizcode.exception.FileReaderException;
 
 import java.io.IOException;
 import java.nio.file.Files;

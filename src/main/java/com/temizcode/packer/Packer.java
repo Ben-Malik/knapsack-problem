@@ -1,10 +1,10 @@
-package com.mobiquity.packer;
+package com.temizcode.packer;
 
-import com.mobiquity.exception.APIException;
-import com.mobiquity.model.Solution;
-import com.mobiquity.service.FileReaderService;
-import com.mobiquity.service.LineParserService;
-import com.mobiquity.service.PackageProblemService;
+import com.temizcode.exception.APIException;
+import com.temizcode.model.Solution;
+import com.temizcode.service.FileReaderService;
+import com.temizcode.service.LineParserService;
+import com.temizcode.service.PackageProblemService;
 
 import java.util.stream.Collectors;
 

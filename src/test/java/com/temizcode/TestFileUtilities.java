@@ -1,4 +1,4 @@
-package com.mobiquity;
+package com.temizcode;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

@@ -1,4 +1,4 @@
-package com.mobiquity.model;
+package com.temizcode.model;
 
 /**
  * A class encapsulating the data about items to be added into the package.

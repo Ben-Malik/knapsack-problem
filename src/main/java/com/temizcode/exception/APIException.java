@@ -1,4 +1,4 @@
-package com.mobiquity.exception;
+package com.temizcode.exception;
 
 /**
  * The API exception thrown during any sort of failure in the app.

@@ -1,8 +1,8 @@
-package com.mobiquity.validator;
+package com.temizcode.validator;
 
-import com.mobiquity.constant.Constants;
-import com.mobiquity.exception.InputFormatException;
-import com.mobiquity.model.Item;
+import com.temizcode.constant.Constants;
+import com.temizcode.exception.InputFormatException;
+import com.temizcode.model.Item;
 
 import java.util.HashSet;
 import java.util.List;
