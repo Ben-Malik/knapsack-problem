@@ -1,4 +1,4 @@
-package com.temizcode.model;
+package com.benmaliktchamalam.model;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-package com.temizcode;
+package com.benmaliktchamalam;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

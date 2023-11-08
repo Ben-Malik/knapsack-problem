@@ -1,9 +1,9 @@
-package com.temizcode.service;
+package com.benmaliktchamalam.service;
 
-import com.temizcode.constant.Constants;
-import com.temizcode.exception.InputFormatException;
-import com.temizcode.model.Item;
-import com.temizcode.validator.PayloadValidator;
+import com.benmaliktchamalam.constant.Constants;
+import com.benmaliktchamalam.exception.InputFormatException;
+import com.benmaliktchamalam.model.Item;
+import com.benmaliktchamalam.validator.PayloadValidator;
 
 /**
  * A class for dealing with the item checks and parsing.

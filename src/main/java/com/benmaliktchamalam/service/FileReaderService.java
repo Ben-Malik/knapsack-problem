@@ -1,7 +1,7 @@
-package com.temizcode.service;
+package com.benmaliktchamalam.service;
 
-import com.temizcode.constant.Constants;
-import com.temizcode.exception.FileReaderException;
+import com.benmaliktchamalam.constant.Constants;
+import com.benmaliktchamalam.exception.FileReaderException;
 
 import java.io.IOException;
 import java.nio.file.Files;

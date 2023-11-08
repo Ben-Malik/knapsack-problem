@@ -1,4 +1,4 @@
-package com.temizcode.model;
+package com.benmaliktchamalam.model;
 
 /**
  * A class encapsulating the data about items to be added into the package.

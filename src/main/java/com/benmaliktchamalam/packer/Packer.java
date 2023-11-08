@@ -1,10 +1,10 @@
-package com.temizcode.packer;
+package com.benmaliktchamalam.packer;
 
-import com.temizcode.exception.APIException;
-import com.temizcode.model.Solution;
-import com.temizcode.service.FileReaderService;
-import com.temizcode.service.LineParserService;
-import com.temizcode.service.PackageProblemService;
+import com.benmaliktchamalam.exception.APIException;
+import com.benmaliktchamalam.model.Solution;
+import com.benmaliktchamalam.service.FileReaderService;
+import com.benmaliktchamalam.service.LineParserService;
+import com.benmaliktchamalam.service.PackageProblemService;
 
 import java.util.stream.Collectors;
 

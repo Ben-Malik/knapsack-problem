@@ -1,8 +1,8 @@
-package com.temizcode.validator;
+package com.benmaliktchamalam.validator;
 
-import com.temizcode.constant.Constants;
-import com.temizcode.exception.InputFormatException;
-import com.temizcode.model.Item;
+import com.benmaliktchamalam.constant.Constants;
+import com.benmaliktchamalam.exception.InputFormatException;
+import com.benmaliktchamalam.model.Item;
 
 import java.util.HashSet;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.temizcode.constant;
+package com.benmaliktchamalam.constant;
 
 import java.util.regex.Pattern;
 

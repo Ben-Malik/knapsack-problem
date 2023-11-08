@@ -1,8 +1,8 @@
-package com.temizcode;
+package com.benmaliktchamalam;
 
-import com.temizcode.exception.FileReaderException;
-import com.temizcode.service.FileReaderService;
-import com.temizcode.service.PackageProblemService;
+import com.benmaliktchamalam.exception.FileReaderException;
+import com.benmaliktchamalam.service.FileReaderService;
+import com.benmaliktchamalam.service.PackageProblemService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

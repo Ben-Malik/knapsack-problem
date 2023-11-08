@@ -1,8 +1,8 @@
-package com.temizcode;
+package com.benmaliktchamalam;
 
-import com.temizcode.exception.InputFormatException;
-import com.temizcode.model.Item;
-import com.temizcode.validator.PayloadValidator;
+import com.benmaliktchamalam.exception.InputFormatException;
+import com.benmaliktchamalam.model.Item;
+import com.benmaliktchamalam.validator.PayloadValidator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

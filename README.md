@@ -114,7 +114,7 @@ Then, import this library from the local maven artifactory and now you can start
 method
 
 ```
-static com.temizcode.packer.pack(String filePath) throws APIException
+static com.benmaliktchamalam.packer.pack(String filePath) throws APIException
 ```
 
 

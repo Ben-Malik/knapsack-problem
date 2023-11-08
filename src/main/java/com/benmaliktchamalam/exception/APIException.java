@@ -1,4 +1,4 @@
-package com.temizcode.exception;
+package com.benmaliktchamalam.exception;
 
 /**
  * The API exception thrown during any sort of failure in the app.

@@ -1,9 +1,9 @@
-package com.temizcode.service;
+package com.benmaliktchamalam.service;
 
-import com.temizcode.constant.Constants;
-import com.temizcode.model.Item;
-import com.temizcode.model.Payload;
-import com.temizcode.model.Solution;
+import com.benmaliktchamalam.constant.Constants;
+import com.benmaliktchamalam.model.Item;
+import com.benmaliktchamalam.model.Payload;
+import com.benmaliktchamalam.model.Solution;
 
 import java.util.ArrayList;
 import java.util.List;

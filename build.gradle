@@ -4,7 +4,7 @@ plugins {
 }
 compileJava.options.encoding = 'UTF-8'
 
-group 'com.temizcode'
+group 'com.benmaliktchamalam'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = JavaVersion.VERSION_11

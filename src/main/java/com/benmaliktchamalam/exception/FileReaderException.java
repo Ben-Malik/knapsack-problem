@@ -1,4 +1,4 @@
-package com.temizcode.exception;
+package com.benmaliktchamalam.exception;
 
 /**
  * An exception thrown when a failure takes place while reading a file.

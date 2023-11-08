@@ -1,8 +1,8 @@
-package com.temizcode;
+package com.benmaliktchamalam;
 
 
-import com.temizcode.exception.APIException;
-import com.temizcode.packer.Packer;
+import com.benmaliktchamalam.exception.APIException;
+import com.benmaliktchamalam.packer.Packer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
