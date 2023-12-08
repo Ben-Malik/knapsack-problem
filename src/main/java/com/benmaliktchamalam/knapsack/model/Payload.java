@@ -1,4 +1,4 @@
-package com.benmaliktchamalam.model;
+package com.benmaliktchamalam.knapsack.model;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class Payload {
 
-    private Double targetWeight;
-    private List<Item> items;
+    private final Double targetWeight;
+    private final List<Item> items;
 
     public Payload(Double targetWeight, List<Item> items) {
         this.targetWeight = targetWeight;

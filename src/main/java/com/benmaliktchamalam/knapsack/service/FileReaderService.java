@@ -1,7 +1,7 @@
-package com.benmaliktchamalam.service;
+package com.benmaliktchamalam.knapsack.service;
 
-import com.benmaliktchamalam.constant.Constants;
-import com.benmaliktchamalam.exception.FileReaderException;
+import com.benmaliktchamalam.knapsack.constant.APIConstants;
+import com.benmaliktchamalam.knapsack.exception.FileReaderException;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -26,7 +26,7 @@ public class FileReaderService {
         try {
             return Files.lines(Path.of(filePath));
         } catch (IOException e) {
-            throw new FileReaderException(Constants.READ_FILE_EXCEPTION_MESSAGE, e);
+            throw new FileReaderException(APIConstants.READ_FILE_EXCEPTION_MESSAGE, e);
         }
     }
 

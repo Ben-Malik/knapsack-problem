@@ -1,9 +1,9 @@
-package com.benmaliktchamalam.service;
+package com.benmaliktchamalam.knapsack.service;
 
-import com.benmaliktchamalam.constant.Constants;
-import com.benmaliktchamalam.exception.InputFormatException;
-import com.benmaliktchamalam.model.Item;
-import com.benmaliktchamalam.validator.PayloadValidator;
+import com.benmaliktchamalam.knapsack.constant.APIConstants;
+import com.benmaliktchamalam.knapsack.exception.InputFormatException;
+import com.benmaliktchamalam.knapsack.validator.PayloadValidator;
+import com.benmaliktchamalam.knapsack.model.Item;
 
 /**
  * A class for dealing with the item checks and parsing.
@@ -17,12 +17,11 @@ public class ItemParserService {
     /**
      * Parses a given String of item value into an {@linkplain Item} object.
      *
-     * @param itemValue The string version of theitem value to be parsed.
+     * @param itemValue The string version of the item value to be parsed.
      * @return The Object version of the given string.
-     * @throws {@linkplain InputFormatException} in case any of the validations does not pass.
      */
     public Item parse(String itemValue) throws InputFormatException {
-        var item = itemValue.replaceAll(Constants.REMOVED_PARTS_REGEX, Constants.REPLACEMENT_REGEX).split(Constants.PROPERTIES_SEPARATOR);
+        var item = itemValue.replaceAll(APIConstants.REMOVED_PARTS_REGEX, APIConstants.REPLACEMENT_REGEX).split(APIConstants.PROPERTIES_SEPARATOR);
 
         var index = parseIndex(item[0]);
         var weight = parseWeight(item[1]);

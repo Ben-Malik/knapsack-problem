@@ -92,7 +92,7 @@ Mockito 3.11.0
 **Testing:**
 
 Most of the edge cases are covered by the validations and they are also tested in the unit tests and integration tests.
-Line coverage is 96%.
+Line coverage is 98%.
 
 `./gradlew test`
 
@@ -114,7 +114,7 @@ Then, import this library from the local maven artifactory and now you can start
 method
 
 ```
-static com.benmaliktchamalam.packer.pack(String filePath) throws APIException
+static com.benmaliktchamalam.knapsack.packer.pack(String filePath) throws APIException
 ```
 
 

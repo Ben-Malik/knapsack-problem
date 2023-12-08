@@ -1,10 +1,10 @@
-package com.benmaliktchamalam.service;
+package com.benmaliktchamalam.knapsack.service;
 
-import com.benmaliktchamalam.constant.Constants;
-import com.benmaliktchamalam.exception.InputFormatException;
-import com.benmaliktchamalam.model.Item;
-import com.benmaliktchamalam.model.Payload;
-import com.benmaliktchamalam.validator.PayloadValidator;
+import com.benmaliktchamalam.knapsack.constant.APIConstants;
+import com.benmaliktchamalam.knapsack.exception.InputFormatException;
+import com.benmaliktchamalam.knapsack.model.Item;
+import com.benmaliktchamalam.knapsack.validator.PayloadValidator;
+import com.benmaliktchamalam.knapsack.model.Payload;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -24,8 +24,8 @@ public class LineParserService {
      * Parses and validate a given line of the file into a {@linkplain Payload}
      *
      * @param line The line to parsed and validated.
-     * @return an object of {@linkplain Payload} of the given string of line(pacakge).
-     * @throws an {@linkplain InputFormatException}
+     * @return an object of {@linkplain Payload} of the given string of line(package).
+     * @throws  {@linkplain InputFormatException} in case of any input format issues detected.
      */
     public Payload parse(String line) throws InputFormatException {
         String[] problemParts = payloadValidator.ensureLinePattern(line);
@@ -55,7 +55,7 @@ public class LineParserService {
      * @return a list of {@linkplain Item}s parsed.
      */
     private List<Item> parseItems(String items) {
-        var itemValues = items.split(Constants.ITEMS_SEPERATOR);
+        var itemValues = items.split(APIConstants.ITEMS_SEPARATOR);
 
         ItemParserService itemParserService = new ItemParserService();
 

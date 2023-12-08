@@ -1,9 +1,9 @@
-package com.benmaliktchamalam.service;
+package com.benmaliktchamalam.knapsack.service;
 
-import com.benmaliktchamalam.constant.Constants;
-import com.benmaliktchamalam.model.Item;
-import com.benmaliktchamalam.model.Payload;
-import com.benmaliktchamalam.model.Solution;
+import com.benmaliktchamalam.knapsack.constant.APIConstants;
+import com.benmaliktchamalam.knapsack.model.Item;
+import com.benmaliktchamalam.knapsack.model.Payload;
+import com.benmaliktchamalam.knapsack.model.Solution;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,13 +33,13 @@ public class PackageProblemService {
      */
     public Solution solve(Payload payload) {
 
-        var weights = payload.getItems().stream().map(item -> (int) (item.getWeight() * Constants.DECIMAL_FACTOR))
+        var weights = payload.getItems().stream().map(item -> (int) (item.getWeight() * APIConstants.DECIMAL_FACTOR))
                 .toArray(Integer[]::new);
-        var costs = payload.getItems().stream().map(item -> (int) (item.getCost() * Constants.DECIMAL_FACTOR))
+        var costs = payload.getItems().stream().map(item -> (int) (item.getCost() * APIConstants.DECIMAL_FACTOR))
                 .toArray(Integer[]::new);
         var indexes = payload.getItems().stream().map(Item::getIndex).toArray(Integer[]::new);
 
-        capacity = (int) (payload.getTargetWeight() * Constants.DECIMAL_FACTOR);
+        capacity = (int) (payload.getTargetWeight() * APIConstants.DECIMAL_FACTOR);
         complexity = weights.length;
 
         var resultingMatrix = computeOptimumPackage(weights, costs);
@@ -49,9 +49,9 @@ public class PackageProblemService {
     /**
      * A helper method to compute the optimum package given two arrays of weights and costs
      *
-     * @param weights
-     * @param costs
-     * @return
+     * @param weights The weights as an array.
+     * @param costs The costs as an array.
+     * @return a 2D optimum package.
      */
     private int[][] computeOptimumPackage(Integer[] weights, Integer[] costs) {
 
@@ -76,9 +76,9 @@ public class PackageProblemService {
      * Creates a solution to the problem given the resulting matrix, weights and costs.
      *
      * @param resultingMatrix acquired from the weights and costs.
-     * @param weights
-     * @param costs
-     * @param indexes
+     * @param weights the weights
+     * @param costs the costs
+     * @param indexes the indexes
      * @return a list of integers as the solution to the package problem.
      */
     private Solution createSolution(int[][] resultingMatrix, Integer[] weights, Integer[] costs,

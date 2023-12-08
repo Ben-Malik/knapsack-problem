@@ -1,8 +1,8 @@
-package com.benmaliktchamalam;
+package com.benmaliktchamalam.knapsack;
 
-import com.benmaliktchamalam.exception.InputFormatException;
-import com.benmaliktchamalam.model.Item;
-import com.benmaliktchamalam.validator.PayloadValidator;
+import com.benmaliktchamalam.knapsack.exception.InputFormatException;
+import com.benmaliktchamalam.knapsack.model.Item;
+import com.benmaliktchamalam.knapsack.validator.PayloadValidator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -35,7 +35,7 @@ public class PayloadValidatorTest {
         var invalidFileLine = TestFileUtilities.invalidFileLines.get(0);
         var exception = Assertions.assertThrows(InputFormatException.class, () ->
                 payloadValidator.ensureLinePattern(invalidFileLine));
-        Assertions.assertEquals("The given line format is not accurrate.", exception.getMessage());
+        Assertions.assertEquals("The given line format is not accurate.", exception.getMessage());
     }
 
     @Test

@@ -1,4 +1,4 @@
-package com.benmaliktchamalam.constant;
+package com.benmaliktchamalam.knapsack.constant;
 
 import java.util.regex.Pattern;
 
@@ -7,11 +7,10 @@ import java.util.regex.Pattern;
  *
  * @author ben-malik
  */
-public final class Constants {
+public final class APIConstants {
 
     // Regular expressions.
-    public static final String PROPERTY_SEPERATOR = ",";
-    public static final String ITEMS_SEPERATOR = " ";
+    public static final String ITEMS_SEPARATOR = " ";
 
     // Constraints
     public static final String MAXIMUM_PACKAGE_WEIGHT = "100";
@@ -26,7 +25,7 @@ public final class Constants {
     public static final String REMOVED_PARTS_REGEX = "[()\\€]";
     public static final String PROPERTIES_SEPARATOR = ",";
 
-    //String Operations Constants
+    //String Operations APIConstants
     public static final Pattern PROBLEM_PARTS_SEPARATOR_PATTERN = Pattern.compile("[ ]:[ ]");
     public static final String TWO_DECIMAL_DOUBLE_REGEX = "(\\d*(.\\d{1,2})?)";
     public static final Pattern TWO_DECIMAL_DOUBLE_PATTERN = Pattern.compile("^" + TWO_DECIMAL_DOUBLE_REGEX + "$");
@@ -36,7 +35,7 @@ public final class Constants {
     public static final String SINGLE_SPACE = " ";
 
     //Exceptional Messages
-    public static final String LINE_INCOMPATIBLE_ERROR = "The given line format is not accurrate.";
+    public static final String LINE_INCOMPATIBLE_ERROR = "The given line format is not accurate.";
     public static final String MAX_TOTAL_WEIGHT_LIMIT_ERROR = "The maximum total weight limit is ";
     public static final String MAX_ITEM_NUMBER_ERROR = "The maximum number of items in a line can be ";
     public static final String DUPLICATE_ITEM_INDEX_ERROR = "The same item index occurs more than once in a line.";

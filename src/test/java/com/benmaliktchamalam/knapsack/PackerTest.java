@@ -1,8 +1,8 @@
-package com.benmaliktchamalam;
+package com.benmaliktchamalam.knapsack;
 
 
-import com.benmaliktchamalam.exception.APIException;
-import com.benmaliktchamalam.packer.Packer;
+import com.benmaliktchamalam.knapsack.exception.APIException;
+import com.benmaliktchamalam.knapsack.packer.Packer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +17,6 @@ public class PackerTest {
     public void testPackWhenGivenInputIsValid() throws APIException {
         String allSolutions = Packer.pack(TestFileUtilities.validFilePath.toString());
         String[] solutions = allSolutions.split("\n");
-        int result = 1;
-        String sol = String.valueOf(result);
         Assertions.assertEquals(4, solutions.length);
         Assertions.assertEquals("4", solutions[0]);
         Assertions.assertEquals("-", solutions[1]);
@@ -36,7 +34,7 @@ public class PackerTest {
     @Test
     void ensureThatAPIExceptionIsThrownWhenTheGivenLineInputIsInvalid() {
         var exception = Assertions.assertThrows(APIException.class, () -> Packer.pack(TestFileUtilities.invalidLinePath.toString()));
-        Assertions.assertEquals("The given line format is not accurrate.", exception.getMessage());
+        Assertions.assertEquals("The given line format is not accurate.", exception.getMessage());
     }
 
     @Test

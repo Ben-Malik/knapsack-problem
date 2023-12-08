@@ -1,8 +1,7 @@
-package com.benmaliktchamalam;
+package com.benmaliktchamalam.knapsack;
 
-import com.benmaliktchamalam.exception.FileReaderException;
-import com.benmaliktchamalam.service.FileReaderService;
-import com.benmaliktchamalam.service.PackageProblemService;
+import com.benmaliktchamalam.knapsack.exception.FileReaderException;
+import com.benmaliktchamalam.knapsack.service.FileReaderService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,7 +15,6 @@ import java.util.stream.Collectors;
  */
 public class FileReaderServiceTest {
 
-    private PackageProblemService packageProblemService;
     private FileReaderService fileReaderService;
 
     @BeforeEach

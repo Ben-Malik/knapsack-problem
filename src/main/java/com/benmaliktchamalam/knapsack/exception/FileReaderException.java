@@ -1,4 +1,4 @@
-package com.benmaliktchamalam.exception;
+package com.benmaliktchamalam.knapsack.exception;
 
 /**
  * An exception thrown when a failure takes place while reading a file.

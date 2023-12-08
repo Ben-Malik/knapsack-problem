@@ -1,8 +1,8 @@
-package com.benmaliktchamalam;
+package com.benmaliktchamalam.knapsack;
 
-import com.benmaliktchamalam.model.Item;
-import com.benmaliktchamalam.model.Payload;
-import com.benmaliktchamalam.service.PackageProblemService;
+import com.benmaliktchamalam.knapsack.model.Item;
+import com.benmaliktchamalam.knapsack.model.Payload;
+import com.benmaliktchamalam.knapsack.service.PackageProblemService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,7 +35,7 @@ public class PackageProblemServiceTest {
     }
 
     @Test
-    void ensureSoveReturnsZeroWhenTheGivenPayloadHasItemsWithZeros() {
+    void ensureSolveReturnsZeroWhenTheGivenPayloadHasItemsWithZeros() {
         Item[] itemsArray = {new Item(1, 0d, 0d),
                 new Item(4, 0d, 0d),
                 new Item(5, 0d, 0d)};

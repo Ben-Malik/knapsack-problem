@@ -1,8 +1,8 @@
-package com.benmaliktchamalam.validator;
+package com.benmaliktchamalam.knapsack.validator;
 
-import com.benmaliktchamalam.constant.Constants;
-import com.benmaliktchamalam.exception.InputFormatException;
-import com.benmaliktchamalam.model.Item;
+import com.benmaliktchamalam.knapsack.constant.APIConstants;
+import com.benmaliktchamalam.knapsack.exception.InputFormatException;
+import com.benmaliktchamalam.knapsack.model.Item;
 
 import java.util.HashSet;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * A valicator class to ensure all the constraints on the Payload or Package to be sent.
+ * A validator class to ensure all the constraints on the Payload or Package to be sent.
  *
  * @author ben-malik
  */
@@ -34,15 +34,15 @@ public class PayloadValidator {
      */
     public String[] ensureLinePattern(String line) {
 
-        if (Constants.PROBLEM_PARTS_SEPARATOR_PATTERN.asPredicate().test(line)) {
+        if (APIConstants.PROBLEM_PARTS_SEPARATOR_PATTERN.asPredicate().test(line)) {
             var parts = line.split(":");
             parts[0] = parts[0].trim();
             parts[1] = parts[1].trim();
-            if (Constants.TWO_DECIMAL_DOUBLE_PATTERN.asPredicate().test(parts[0])
-                    && Constants.ITEM_PART_PATTERN.asPredicate().test(parts[1] + Constants.SINGLE_SPACE))
+            if (APIConstants.TWO_DECIMAL_DOUBLE_PATTERN.asPredicate().test(parts[0])
+                    && APIConstants.ITEM_PART_PATTERN.asPredicate().test(parts[1] + APIConstants.SINGLE_SPACE))
                 return parts;
         }
-        throw new InputFormatException(Constants.LINE_INCOMPATIBLE_ERROR);
+        throw new InputFormatException(APIConstants.LINE_INCOMPATIBLE_ERROR);
     }
 
     /**
@@ -52,8 +52,8 @@ public class PayloadValidator {
      * @throws InputFormatException in case of a failure.
      */
     public void ensureTargetWeight(Double targetWeight) {
-        if (targetWeight > Double.parseDouble(Constants.MAXIMUM_PACKAGE_WEIGHT)) {
-            throw new InputFormatException(String.join(Constants.DELIMITER, Constants.MAX_TOTAL_WEIGHT_LIMIT_ERROR, Constants.MAXIMUM_PACKAGE_WEIGHT));
+        if (targetWeight > Double.parseDouble(APIConstants.MAXIMUM_PACKAGE_WEIGHT)) {
+            throw new InputFormatException(String.join(APIConstants.DELIMITER, APIConstants.MAX_TOTAL_WEIGHT_LIMIT_ERROR, APIConstants.MAXIMUM_PACKAGE_WEIGHT));
         }
     }
 
@@ -64,8 +64,8 @@ public class PayloadValidator {
      * @throws InputFormatException in case of a failure.
      */
     public void ensureMaximumItemNumber(List<Item> items) {
-        if (items.size() > Integer.parseInt(Constants.MAXIMUM_ITEM_NUMBER)) {
-            throw new InputFormatException(String.join(Constants.DELIMITER, Constants.MAX_ITEM_NUMBER_ERROR, Constants.MAXIMUM_ITEM_NUMBER));
+        if (items.size() > Integer.parseInt(APIConstants.MAXIMUM_ITEM_NUMBER)) {
+            throw new InputFormatException(String.join(APIConstants.DELIMITER, APIConstants.MAX_ITEM_NUMBER_ERROR, APIConstants.MAXIMUM_ITEM_NUMBER));
         }
     }
 
@@ -77,8 +77,8 @@ public class PayloadValidator {
      */
     public void ensureItemWeight(Double weight) {
 
-        if (weight > Double.parseDouble(Constants.MAXIMUM_ITEM_WEIGHT)) {
-            throw new InputFormatException(String.join(Constants.DELIMITER, Constants.MAX_ITEM_WEIGHT_LIMIT_ERROR, Constants.MAXIMUM_ITEM_WEIGHT));
+        if (weight > Double.parseDouble(APIConstants.MAXIMUM_ITEM_WEIGHT)) {
+            throw new InputFormatException(String.join(APIConstants.DELIMITER, APIConstants.MAX_ITEM_WEIGHT_LIMIT_ERROR, APIConstants.MAXIMUM_ITEM_WEIGHT));
         }
     }
 
@@ -89,8 +89,8 @@ public class PayloadValidator {
      * @throws InputFormatException in case of a failure.
      */
     public void ensureItemCost(Double cost) {
-        if (cost > Double.parseDouble(Constants.MAXIMUM_ITEM_COST)) {
-            throw new InputFormatException(String.join(Constants.DELIMITER, Constants.MAX_ITEM_PRICE_LIMIT_ERROR, Constants.MAXIMUM_ITEM_COST));
+        if (cost > Double.parseDouble(APIConstants.MAXIMUM_ITEM_COST)) {
+            throw new InputFormatException(String.join(APIConstants.DELIMITER, APIConstants.MAX_ITEM_PRICE_LIMIT_ERROR, APIConstants.MAXIMUM_ITEM_COST));
         }
     }
 
@@ -103,7 +103,7 @@ public class PayloadValidator {
     public void avoidDuplicateItems(List<Item> items) {
         Set<Integer> duplicateItems = new HashSet<>();
         if (!items.stream().map(Item::getIndex).filter(n -> !duplicateItems.add(n)).collect(Collectors.toSet()).isEmpty()) {
-            throw new InputFormatException(Constants.DUPLICATE_ITEM_INDEX_ERROR);
+            throw new InputFormatException(APIConstants.DUPLICATE_ITEM_INDEX_ERROR);
         }
     }
 

@@ -1,8 +1,8 @@
-package com.benmaliktchamalam;
+package com.benmaliktchamalam.knapsack;
 
-import com.benmaliktchamalam.exception.InputFormatException;
-import com.benmaliktchamalam.service.LineParserService;
-import com.benmaliktchamalam.validator.PayloadValidator;
+import com.benmaliktchamalam.knapsack.exception.InputFormatException;
+import com.benmaliktchamalam.knapsack.service.LineParserService;
+import com.benmaliktchamalam.knapsack.validator.PayloadValidator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -59,21 +59,21 @@ public class LineParserServiceTest {
     void ensureThatAPIExceptionIsThrownWhenThePayloadValidatorThrowsAnExceptionWhileEnsuringTheTargetWeight() {
         doThrow(new InputFormatException(TEST_EXCEPTION)).when(payloadValidator).ensureTargetWeight(Mockito.anyDouble());
         var exception = Assertions.assertThrows(NullPointerException.class, () -> lineParserService.parse(validFileLine));
-        Assertions.assertEquals(null, exception.getMessage());
+        Assertions.assertNull(exception.getMessage());
     }
 
     @Test
     void ensureThatAPIExceptionIsThrownWhenThePayloadValidatorThrowsAnExceptionWhileEnsuringTheMaximumItemNumber() {
         doThrow(new InputFormatException(TEST_EXCEPTION)).when(payloadValidator).ensureMaximumItemNumber(Mockito.anyList());
         var exception = Assertions.assertThrows(NullPointerException.class, () -> lineParserService.parse(validFileLine));
-        Assertions.assertEquals(null, exception.getMessage());
+        Assertions.assertNull(exception.getMessage());
     }
 
     @Test
     void ensureThatAPIExceptionIsThrownWhenThePayloadValidatorThrowsAnExceptionWhileAvoidingDuplicateItems() {
         doThrow(new InputFormatException(TEST_EXCEPTION)).when(payloadValidator).avoidDuplicateItems(Mockito.anyList());
         var exception = Assertions.assertThrows(NullPointerException.class, () -> lineParserService.parse(validFileLine));
-        Assertions.assertEquals(null, exception.getMessage());
+        Assertions.assertNull(exception.getMessage());
     }
 
 }

@@ -1,4 +1,4 @@
-package com.benmaliktchamalam.exception;
+package com.benmaliktchamalam.knapsack.exception;
 
 /**
  * The API exception thrown during any sort of failure in the app.
@@ -11,7 +11,4 @@ public class APIException extends Exception {
         super(message, e);
     }
 
-    public APIException(String message) {
-        super(message);
-    }
 }

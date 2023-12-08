@@ -1,4 +1,4 @@
-package com.benmaliktchamalam.model;
+package com.benmaliktchamalam.knapsack.model;
 
 /**
  * A class encapsulating the data about items to be added into the package.
@@ -7,9 +7,9 @@ package com.benmaliktchamalam.model;
  */
 public class Item {
 
-    private Integer index;
-    private Double weight;
-    private Double cost;
+    private final Integer index;
+    private final Double weight;
+    private final Double cost;
 
     public Item(Integer index, Double weight, Double cost) {
         this.index = index;

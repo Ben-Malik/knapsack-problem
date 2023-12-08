@@ -1,10 +1,11 @@
-package com.benmaliktchamalam.packer;
+package com.benmaliktchamalam.knapsack.packer;
 
-import com.benmaliktchamalam.exception.APIException;
-import com.benmaliktchamalam.model.Solution;
-import com.benmaliktchamalam.service.FileReaderService;
-import com.benmaliktchamalam.service.LineParserService;
-import com.benmaliktchamalam.service.PackageProblemService;
+import com.benmaliktchamalam.knapsack.exception.APIException;
+import com.benmaliktchamalam.knapsack.model.Solution;
+import com.benmaliktchamalam.knapsack.service.FileReaderService;
+import com.benmaliktchamalam.knapsack.service.LineParserService;
+import com.benmaliktchamalam.knapsack.service.PackageProblemService;
+import lombok.AllArgsConstructor;
 
 import java.util.stream.Collectors;
 
@@ -13,11 +14,8 @@ import java.util.stream.Collectors;
  *
  * @author ben-malik
  */
+@AllArgsConstructor
 public class Packer {
-
-    // Default constructor.
-    private Packer() {
-    }
 
     /***
      * Parses and packs the items in a given file's path, and returns a string of

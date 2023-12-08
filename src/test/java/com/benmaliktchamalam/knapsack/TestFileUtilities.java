@@ -1,4 +1,4 @@
-package com.benmaliktchamalam;
+package com.benmaliktchamalam.knapsack;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -42,7 +42,7 @@ public class TestFileUtilities {
             duplicateIndexes = getResourcePathString("fileWithDuplicateIndexesData");
             invalidNumberItems = getResourcePathString("fileWithInvalidNumberOfItemsData");
         } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
     }
 

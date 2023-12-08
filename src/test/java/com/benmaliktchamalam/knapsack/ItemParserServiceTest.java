@@ -1,8 +1,8 @@
-package com.benmaliktchamalam;
+package com.benmaliktchamalam.knapsack;
 
-import com.benmaliktchamalam.exception.InputFormatException;
-import com.benmaliktchamalam.service.ItemParserService;
-import com.benmaliktchamalam.validator.PayloadValidator;
+import com.benmaliktchamalam.knapsack.exception.InputFormatException;
+import com.benmaliktchamalam.knapsack.service.ItemParserService;
+import com.benmaliktchamalam.knapsack.validator.PayloadValidator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
